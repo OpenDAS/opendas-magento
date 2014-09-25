@@ -1,0 +1,41 @@
+
+<config>
+	<api>
+		<resources>
+            <!--<opendas_shipping_order_shipment>
+                <title>Shipment API</title>
+                <model>opendas_shipping/order_shipment_api</model>
+                <acl>sales/order/shipment</acl>
+                <methods>
+                    <list translate="title" module="core">
+                        <title>Retrieve list of shipments by filters</title>
+                        <method>items</method>
+                        <acl>sales/order/shipment/info</acl>
+                    </list>
+                </methods>
+            </opendas_shipping_order_shipment>-->
+            <opendas_shipping_order translate="title" module="sales">
+                <model>opendas_shipping/order_api</model>
+                <title>Order API</title>
+                <acl>sales/order</acl>
+                <methods>
+                    <list_can_ship translate="title" module="sales">
+                        <title>Retrieve list of orders shippable by filters</title>
+                        <method>ordersCanShip</method>
+                        <acl>sales/order/list</acl>
+                    </list_can_ship>
+                    <items_can_ship translate="title" module="sales">
+                        <title>Retrieve list of items shippable by filters</title>
+                        <method>itemsCanShip</method>
+                        <acl>sales/order/info</acl>
+                    </items_can_ship>
+                    <create_shipment translate="title" module="sales">
+                        <title>Create new shipment for order</title>
+                        <method>createShipment</method>
+                        <acl>sales/order/shipment/create</acl>
+                    </create_shipment>
+                </methods>
+            </opendas_shipping_order>
+		</resources>
+	</api>
+</config>
